@@ -3,17 +3,15 @@ module.exports = (function() {
   return {
     start: () => {
       // Resident set size: Memory assigned to the process in bytes
-      const used = process.memoryUsage().rss/1024/1024
-      initialMemory = Math.round(used * 100) / 100
-      console.log ('-'.repeat(20))
-      console.log (`Starting process...`)
+      initialMemory = process.memoryUsage().rss/1024/1024
+      console.log('-'.repeat(30));
+      console.log (`🔥  Start logging memory...`)
     },
     end: () => {
       // Resident set size: Memory assigned to the process in bytes
-      const used = process.memoryUsage().rss/1024/1024
-      const finalMemory = Math.round(used * 100) / 100
+      const finalMemory = process.memoryUsage().rss/1024/1024
       const totalUsedMemory = (finalMemory - initialMemory).toFixed(2)
-      console.log (`Memory used → ${totalUsedMemory}  MB`)
+      console.log (`💻  Memory used → ${totalUsedMemory}  MB`)
     }
   }
 })()

@@ -16,13 +16,23 @@ With the [`mkfile`](https://developer.apple.com/library/mac/documentation/Darwin
 ## Use demo
 
 ```
-    node index src/temp_1MB_file dest/temp_1MB_file 
-    node index src/temp_10MB_file dest/temp_10MB_file
-    node index src/temp_100MB_file dest/temp_100MB_file
-    node index src/temp_500MB_file dest/temp_500MB_file
+    node no-stream-way src/temp_1MB_file dest/temp_1MB_file 
+    node no-stream-way src/temp_10MB_file dest/temp_10MB_file
+    node no-stream-way src/temp_100MB_file dest/temp_100MB_file
+    node no-stream-way src/temp_500MB_file dest/temp_500MB_file
 ```
 
+```
+    node stream-way src/temp_1MB_file dest/temp_1MB_file 
+    node stream-way src/temp_10MB_file dest/temp_10MB_file
+    node stream-way src/temp_100MB_file dest/temp_100MB_file
+    node stream-way src/temp_500MB_file dest/temp_500MB_file
+```
 
-## Stream Memory Checking
+## Resources
 
-https://www.npmjs.com/package/memory-usage
+- https://blog.risingstack.com/finding-a-memory-leak-in-node-js/
+- https://www.valentinog.com/blog/memory-usage-node-js/
+
+- https://hacks.mozilla.org/2012/11/tracking-down-memory-leaks-in-node-js-a-node-js-holiday-season/
+- https://blog.yld.io/2015/08/10/debugging-memory-leaks-in-node-js-a-walkthrough/#.We9o5JNl9E4
