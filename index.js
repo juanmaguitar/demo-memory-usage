@@ -10,12 +10,7 @@ if (from === to)
   throw new Error('origin and target files cannot be the same')
 
 logMemory.start()
-
-fs.readFile(from, (err, content) => {
-  if (err) throw err
-  fs.writeFile(to, content, err => {
-    if (err) throw err
-    console.log(`copied file ${from} to ${to}`)
-    logMemory.end()
-  })
-})
+const content = fs.readFileSync(from)
+fs.writeFileSync(to, content)
+console.log(`copied file ${from} to ${to}`)
+logMemory.end()
